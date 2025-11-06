@@ -1,0 +1,33 @@
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input, OnInit } from '@angular/core';
+import { CardProduct } from "./card-product/card-product";
+import { ProductApiService } from '../../app/services/product/product-api.service';
+import { Product } from '../../app/interfaces/product/product.interface';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-products',
+  imports: [CardProduct, CommonModule],
+  templateUrl: './products-list.html',
+  styleUrls: ['./products-list.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class ProductsList implements OnInit {
+  readonly productApiService = inject(ProductApiService);
+  readonly cd = inject(ChangeDetectorRef);
+
+  @Input() product!: Product; 
+
+  public products: Product[] = [];
+
+  // trackById(index: number, product: Product) {
+  //   return product.id;
+  // }
+
+  ngOnInit() {
+    this.productApiService.getProducts().subscribe(response => {
+      this.products = response
+      // ensure OnPush components are checked after async data arrives
+      this.cd.markForCheck();
+    })
+  }
+}

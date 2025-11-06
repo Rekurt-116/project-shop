@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-catalog',
   imports: [],
   templateUrl: './catalog.html',
-  styleUrl: './catalog.scss'
+  styleUrls: ['./catalog.scss']
 })
 export class Catalog {
 

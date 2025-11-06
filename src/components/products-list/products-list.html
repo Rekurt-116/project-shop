@@ -1,0 +1,14 @@
+<div class="banner">
+  <span class="banner-text">БЫСТРО УДОБНО НАДЕЖНО</span>
+</div>
+<div class="products-list">
+  @for(product of products; track product.id) {
+  <app-card-product [product]="product"></app-card-product>
+  }
+</div>
+
+<!-- <div *ngFor="let product of products; trackBy: trackById">
+  <app-card-product
+    [product]="product"
+  ></app-card-product>
+</div>  -->
