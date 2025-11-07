@@ -4,9 +4,11 @@
       <img src="/assets/earth.svg" style="width: 48px;" alt="">
       <span>ONLINE STORE</span>
     </button>
-    <button class="nav-button">Профиль</button>
+    <button class="nav-button" (click)="openLoginDialog()" *ngIf="(userService.user$ | async) === null">Войти</button>
+    <button class="nav-button" (click)="logOut()" *ngIf="(userService.user$ | async) != null">Выйти</button>
   </nav>
   <div class="search-cart">
+    <button class="nav-button-w" routerLink="/admin" *ngIf="(userService.user$ | async) != null">Admin</button>
     <div class="search">
       <input type="search" class="input-search" placeholder="Поиск товаров" />
       <button class="button-search">
