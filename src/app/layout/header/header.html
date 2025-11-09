@@ -1,7 +1,7 @@
-<header class="header">
+<header class="header" [class.scrolled]="isScrolled">
   <nav class="navigation">
     <button class="nav-button" routerLink="">
-      <img src="/assets/earth.svg" style="width: 48px;" alt="">
+      <img src="/assets/icons/earth.svg" style="width: 48px;" alt="">
       <span>ONLINE STORE</span>
     </button>
     <button class="nav-button" (click)="openLoginDialog()" *ngIf="(userService.user$ | async) === null">Войти</button>
@@ -17,7 +17,7 @@
     </div>
     <button class="cart" routerLink="/cart">
       <span style="color: #ffffff">Корзина</span>
-      <img class="cart-icon" src="/assets/cart.svg" alt="" />
+      <img class="cart-icon" src="/assets/icons/cart.svg" alt="" />
     </button>
   </div>
 </header>
