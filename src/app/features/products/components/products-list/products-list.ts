@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input, OnInit } from '@angular/core';
-import { CardProduct } from "./card-product/card-product";
-import { ProductApiService } from '../../app/services/product/product-api.service';
-import { Product } from '../../app/interfaces/product/product.interface';
+import { CardProduct } from "../card-product/card-product";
+import { Product } from '../../../../shared/models/interfaces/product/product.interface';
 import { CommonModule } from '@angular/common';
+import { ProductApiService } from '../../../../core/services/product/product-api.service';
 
 @Component({
   selector: 'app-products',

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../../../app/interfaces/product/product.interface';
+import { Product } from '../../../../shared/models/interfaces/product/product.interface';
 import { CommonModule } from '@angular/common';
-import { LimitationString } from '../../../app/pipes/limitation-title-28i';
+import { LimitationString } from '../../../../shared/pipes/limitation-title-28i';
 
 type MyPartial<T> = {
   [key in keyof T]?: T[key];

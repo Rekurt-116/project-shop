@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ProductsList } from '../products-list/products-list';
+import { ProductsList } from '../products/components/products-list/products-list';
+
 
 @Component({
   selector: 'app-home',

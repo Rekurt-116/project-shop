@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { UserService } from '../../app/services/user/user.service';
+import { UserService } from '../../core/services/user/user.service';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthDialog } from '../auth/auth-dialog/auth-dialog';
+import { AuthDialog } from '../../features/auth/components/auth-dialog/auth-dialog';
 import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
