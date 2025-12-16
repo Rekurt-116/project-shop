@@ -4,7 +4,7 @@
       <img src="/assets/icons/earth.svg" style="width: 48px;" alt="">
       <span>ONLINE STORE</span>
     </button>
-    <button class="nav-button" (click)="openLoginDialog()" *ngIf="(userService.user$ | async) === null">Войти</button>
+    <button class="nav-button" routerLink="/login" *ngIf="(userService.user$ | async) === null">Войти</button>
     <button class="nav-button" (click)="logOut()" *ngIf="(userService.user$ | async) != null">Выйти</button>
   </nav>
   <div class="search-cart">
@@ -12,7 +12,7 @@
     <div class="search">
       <input type="search" class="input-search" placeholder="Поиск товаров" />
       <button class="button-search">
-        <img src="/assets/search.svg" alt="" />
+        <img src="/assets/icons/search.svg" alt="" />
       </button>
     </div>
     <button class="cart" routerLink="/cart">

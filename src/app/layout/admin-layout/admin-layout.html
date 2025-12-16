@@ -1,0 +1,26 @@
+<div class="admin-layout">
+  <aside class="sidebar">
+    <h3>ADMIN</h3>
+
+    <nav>
+      <a routerLink="/admin">Dashboard</a>
+      <a routerLinkActive="active" routerLink="/admin/users">Users</a>
+      <a routerLinkActive="active" routerLink="/admin/products">Products</a>
+      <a routerLinkActive="active" routerLink="/admin/settings">Settings</a>
+    </nav>
+  </aside>
+
+  <div class="content">
+    <header class="admin-header">
+      <a class="nav-button" routerLink="">
+        <img src="/assets/icons/earth-white.svg" style="width: 48px" alt="" />
+        <span style="color: #ffffff">ONLINE STORE</span>
+      </a>
+      <button (click)="logout()">Выйти</button>
+    </header>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

@@ -1,61 +1,20 @@
-export interface Product {
-      id: number;
-      title: string;
-      description: string;
-      category: string;
-      price: number;
-      discountPercentage: number;
-      rating: number;
-      stock: number;
-      tags: [
-        string,
-        string
-      ],
-      brand: string;
-      sku: string;
-      weight: number;
-      dimensions: {
-        width: number;
-        height: number;
-        depth: number;
-      },
-      warrantyInformation: string;
-      shippingInformation: string;
-      availabilityStatus: string;
-      reviews: [
-        {
-          rating: number;
-          comment: string;
-          date: number;
-          reviewerName: string;
-          reviewerEmail: string;
-        },
-        {
-          rating: number;
-          comment: string;
-          date: number;
-          reviewerName: string;
-          reviewerEmail: string;
-        },
-        {
-          rating: number;
-          comment: string;
-          date: number;
-          reviewerName: string;
-          reviewerEmail: string;
-        }
-      ],
-      returnPolicy: string;
-      minimumOrderQuantity: number;
-      meta: {
-        createdAt: string;
-        updatedAt: string;
-        barcode: string;
-        qrCode: "..."
-      },
-      thumbnail: "...",
-      images: ["...", "...", "..."]
-    }
+export type Product = {
+    id: number;
+    title: string;
+    slug: string;
+    price: number;
+    description: string;
+    category: {
+        id: number;
+        name: string;
+        image: string;
+        slug: string;
+    };
+    images: string[];
+}
+
+//  type Product = typeof sampleProduct; заметка
+
 export interface CreateProduct {
   title: string;
   price: number;
