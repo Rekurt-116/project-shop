@@ -4,7 +4,7 @@
       <img src="/assets/icons/earth.svg" style="width: 48px;" alt="">
       <span>ONLINE STORE</span>
     </button>
-    <button class="nav-button" (click)="openLoginDialog()" *ngIf="(userService.user$ | async) === null">Войти</button>
+    <button class="nav-button" routerLink="/login" *ngIf="(userService.user$ | async) === null">Войти</button>
     <button class="nav-button" (click)="logOut()" *ngIf="(userService.user$ | async) != null">Выйти</button>
   </nav>
   <div class="search-cart">

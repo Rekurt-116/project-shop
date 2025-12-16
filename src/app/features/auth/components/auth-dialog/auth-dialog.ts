@@ -4,7 +4,7 @@ import { MatDialogClose } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-auth-dialog',
-  imports: [MatButtonModule, MatDialogClose],
+  imports: [MatButtonModule],
   templateUrl: './auth-dialog.html',
   styleUrl: './auth-dialog.scss'
 })
