@@ -1,0 +1,36 @@
+<div class="login-page">
+  <div class="login-card">
+    <h1 class="title">Вход</h1>
+
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+            id="email"
+            type="email"
+            placeholder="Введите email"
+            formControlName="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Пароль</label>
+        <input
+            id="password"
+            type="password"
+            placeholder="Введите пароль"
+            formControlName="password"
+        />
+      </div>
+
+      <button (click)="onSubmit()" type="submit" class="login-btn" [disabled]="this.loginForm.invalid">
+        Войти
+      </button>
+    </form>
+
+    <p class="footer-text">
+      Нет аккаунта? <a routerLink="">Регистрация</a>
+    </p>
+  </div>
+</div>
+
