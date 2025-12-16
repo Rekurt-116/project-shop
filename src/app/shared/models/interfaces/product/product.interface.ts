@@ -1,22 +1,19 @@
-export interface Product {
-  id: number;
-  title: string;
-  slug: string;
-  price: number,
-  description: string;
-  category: {
+export type Product = {
     id: number;
-    name: string;
-    image: string;
+    title: string;
     slug: string;
-  },
-  images: [
-    string,
-    string,
-    string
-  ]
-
+    price: number;
+    description: string;
+    category: {
+        id: number;
+        name: string;
+        image: string;
+        slug: string;
+    };
+    images: string[];
 }
+
+//  type Product = typeof sampleProduct; заметка
 
 export interface CreateProduct {
   title: string;

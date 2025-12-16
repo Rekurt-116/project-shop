@@ -26,7 +26,6 @@ export class ProductsList implements OnInit {
   ngOnInit() {
     this.productApiService.getProducts().subscribe(response => {
       this.products = response
-      // ensure OnPush components are checked after async data arrives
       this.cd.markForCheck();
     })
   }
