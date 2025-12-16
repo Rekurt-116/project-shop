@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserService } from '../../core/services/user/user.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,6 +13,8 @@ import { AsyncPipe, NgIf } from '@angular/common';
 })
 export class Header {
   readonly userService = inject(UserService);
+
+  isScrolled = false;
   
   user$ = this.userService.user$;
 
@@ -22,22 +24,26 @@ export class Header {
     const dialogRef = this.dialog.open(AuthDialog);
 
     dialogRef.afterClosed().subscribe((result: string) => {
-      if(result === 'admin') {
-        this.userService.loginAsAdmin()
-      } else if ( result === 'user') {
-        this.userService.loginAsUser()
+      if (result === 'admin') {
+        this.userService.loginAsAdmin();
+      } else if (result === 'user') {
+        this.userService.loginAsUser();
       } else {
-        return undefined
+        return undefined;
       }
-    })
+    });
   }
 
   public logOut() {
-    if(confirm('Вы точно хотите выйти?')) {
-      return this.userService.logOut()
+    if (confirm('Вы точно хотите выйти?')) {
+      return this.userService.logOut();
     } else {
-      return false
+      return false;
     }
   }
-}
 
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
+  }
+}
