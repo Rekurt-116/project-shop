@@ -1,0 +1,85 @@
+.dashboard {
+  color: #fff;
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.stat-card .label {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.stat-card .value {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* BLOCK */
+.block {
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.block h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.table th {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.table td {
+  font-size: 14px;
+}
+
+/* STATUS */
+.status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status.new {
+  background: #333;
+}
+
+.status.paid {
+  background: #fff;
+  color: #000;
+}
