@@ -1,0 +1,17 @@
+<div class="user-card">
+  <div class="avatar">
+    <img class="img"
+         [src]="user.avatar"
+         (error)="onAvatarError($event)"
+         alt=""/>
+  </div>
+  <div class="info-box">
+    <span class="info"><h3>Имя</h3>{{user.name}}</span>
+    <span class="info"><h3>Email</h3>{{user.email}}</span>
+    <span class="info"><h3>Роль</h3>{{user.role}}</span>
+  </div>
+  <div class="buttons">
+    <button class="button"><img class="svg-button" src="/assets/icons/edit-icon.svg" alt=""/></button>
+    <button class="button"><img class="svg-button" src="/assets/icons/delete.svg" alt=""/></button>
+  </div>
+</div>
