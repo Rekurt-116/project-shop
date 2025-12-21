@@ -1,0 +1,72 @@
+.user-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 450px;
+  gap: 30px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.12),
+    0 10px 30px rgba(0,0,0,.8);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 15px;
+
+  &:hover {
+    box-shadow:
+      0 0 6px rgba(255, 255, 255, 0.25),
+      0 0 20px rgba(255, 255, 255, 0.15);
+  }
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 30px auto;
+  justify-content: center;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  gap: 5px;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: space-around;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #333333;
+  border-radius: 50%;
+}
+
+.svg-button {
+  width: 50px;
+  height: 50px;
+}

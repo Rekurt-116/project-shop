@@ -1,1 +1,11 @@
-<p>users works!</p>
+<app-search-input
+  class="search"
+  (search)="onSearch($event)"
+  placeholder='Поиск пользователей'
+>
+</app-search-input>
+<div class="users-container">
+  @for (user of users; track user.id) {
+    <app-user-card [user]="user"></app-user-card>
+  }
+</div>
