@@ -1,4 +1,9 @@
-<app-search-input class="search" (search)="onSearch($event)"></app-search-input>
+<app-search-input
+  class="search"
+  (search)="onSearch($event)"
+  placeholder='Поиск товаров'
+>
+</app-search-input>
 <div class="products-list">
   @for(product of products; track product.id) {
     <app-products-card [product]="product"></app-products-card>

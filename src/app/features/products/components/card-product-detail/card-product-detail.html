@@ -1,4 +1,4 @@
-<div class="card-product" (dblclick)="openDetail()">
+
  <div class="slider">
   <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
     <div class="slide" *ngFor="let img of product.images">
@@ -18,6 +18,5 @@
     ></span>
   </div>
 </div>
-  <h2>{{ product.title | limitionLenth}}</h2>
+  <h2>{{ product.title }}</h2>
   <p>Price: {{ product.price | currency }}</p>
-</div>

@@ -35,16 +35,18 @@ export class Products  implements OnInit {
     )
       .subscribe(products => {
       this.products = products;
-    })
+        this.cd.markForCheck()
+      })
   }
 
   loadProducts() {
   this.productApiService.getProducts().subscribe(products => {
     this.products = products;
+    this.cd.markForCheck()
   })
   }
 
-  onSearch(query: string) {
-    this.search$.next(query);
+  onSearch(qwery: string) {
+    this.search$.next(qwery);
   }
 }

@@ -1,23 +1,28 @@
 import { Component, inject, Input } from '@angular/core';
 import { Product } from '../../../../shared/models/interfaces/product/product.interface';
 import { CommonModule } from '@angular/common';
-import { LimitationString } from '../../../../pipes/limitation-title-28i';
-import { Router } from '@angular/router';
-
-type MyPartial<T> = {
-  [key in keyof T]?: T[key];
-};
+import { ProductApiService } from '../../../../core/services/product/product-api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-card-product',
-  imports: [CommonModule, LimitationString],
-  templateUrl: './card-product.html',
-  styleUrls: ['./card-product.scss']
+  selector: 'app-card-product-detail',
+  imports: [CommonModule],
+  templateUrl: './card-product-detail.html',
+  styleUrl: './card-product-detail.scss'
 })
-export class CardProduct {
+export class CardProductDetail {
 @Input() product!: Product;
 
-readonly router = inject(Router);
+private service = inject(ProductApiService);
+
+readonly route = inject(ActivatedRoute);
+
+ngOnInit() {
+  const id = Number(this.route.snapshot.paramMap.get('id'));
+  this.service.getProductById(id).subscribe((product) => {
+    this.product = product;
+  });
+}
 
 currentIndex = 0;
 
@@ -37,9 +42,5 @@ prev() {
 
 goTo(index: number) {
   this.currentIndex = index;
-}
-
-openDetail() {
-  this.router.navigate(['products', this.product.id]);
 }
 }

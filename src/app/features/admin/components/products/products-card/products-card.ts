@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Product} from '../../../../../shared/models/interfaces/product/product.interface';
 import {CurrencyPipe, NgForOf} from '@angular/common';
-import {LimitationString} from '../../../../../shared/pipes/limitation-title-28i';
+import {LimitationString} from '../../../../../pipes/limitation-title-28i';
 
 @Component({
   selector: 'app-products-card',

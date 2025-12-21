@@ -15,7 +15,7 @@ export class ProductsList implements OnInit {
   readonly productApiService = inject(ProductApiService);
   readonly cd = inject(ChangeDetectorRef);
 
-  @Input() product!: Product; 
+  @Input() product!: Product;
 
   public products: Product[] = [];
 
