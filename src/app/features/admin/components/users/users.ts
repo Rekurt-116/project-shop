@@ -11,7 +11,6 @@ import {AsyncPipe} from '@angular/common';
   imports: [
     SearchInput,
     UserCard,
-    AsyncPipe
   ],
   templateUrl: './users.html',
   styleUrl: './users.scss'

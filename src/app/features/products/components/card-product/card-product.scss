@@ -1,3 +1,15 @@
+.card-product {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius:  20px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.15),
+      0 20px 40px rgba(0,0,0,0.8);
+  }
+}
 
 .slider {
   position: relative;
@@ -8,6 +20,9 @@
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   background: #000;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+
 
   .slides {
     display: flex;
@@ -80,4 +95,9 @@
       }
     }
   }
+}
+
+.info-box {
+  box-sizing: border-box;
+  padding: 0 15px;
 }
