@@ -1,0 +1,21 @@
+<div *ngIf="product as p">
+
+  <div class="slider">
+    <img [src]="p.images[currentIndex]" alt="product image">
+<div class="nav">
+  <button class="prev" (click)="prev()">‹</button>
+  <button class="next" (click)="next()">›</button>
+</div>
+
+
+    <div class="dots">
+      <span class="dot"
+        *ngFor="let img of p.images; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="goTo(i)">
+      </span>
+    </div>
+  </div>
+
+</div>
+

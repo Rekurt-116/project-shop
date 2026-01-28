@@ -8,6 +8,7 @@ import { AdminDashboard } from './features/admin/components/admin-dashboard/admi
 import { Users } from './features/admin/components/users/users';
 import { Products } from './features/admin/components/products/products';
 import { authGuard } from './core/guards/auth-guard';
+import {ProductDetail} from './features/products/components/product-detail/product-detail';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,7 @@ export const routes: Routes = [
       { path: '', component: Home },
       { path: 'login', component: Login },
       { path: 'products', component: ProductsList },
+      { path: 'products/:id', component: ProductDetail}
     ],
   },
   {
