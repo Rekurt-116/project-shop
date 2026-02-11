@@ -9,6 +9,7 @@ import { Users } from './features/admin/components/users/users';
 import { Products } from './features/admin/components/products/products';
 import { authGuard } from './core/guards/auth-guard';
 import {ProductDetail} from './features/products/components/product-detail/product-detail';
+import { Orders } from './features/orders/orders-component/orders';
 
 export const routes: Routes = [
   {
@@ -18,7 +19,8 @@ export const routes: Routes = [
       { path: '', component: Home },
       { path: 'login', component: Login },
       { path: 'products', component: ProductsList },
-      { path: 'products/:id', component: ProductDetail}
+      { path: 'products/:id', component: ProductDetail},
+      { path: 'orders', component: Orders },
     ],
   },
   {

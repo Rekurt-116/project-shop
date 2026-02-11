@@ -1,0 +1,75 @@
+<div class="order-wrapper">
+  <form class="order-card" [formGroup]="form" (ngSubmit)="createOrder()">
+    <h1>Запись на приём</h1>
+    <p class="subtitle">Премиальный уход за вашей улыбкой</p>
+
+    <!-- ИМЯ -->
+    <div class="field">
+      <input formControlName="name" placeholder="Имя" />
+
+      <div
+        class="error"
+        *ngIf="form.get('name')?.touched && form.get('name')?.errors?.['required']"
+      >
+        Имя обязательно
+      </div>
+
+      <div
+        class="error"
+        *ngIf="form.get('name')?.touched && form.get('name')?.errors?.['minlength']"
+      >
+        Минимум 2 буквы
+      </div>
+
+      <div class="error" *ngIf="form.get('name')?.touched && form.get('name')?.errors?.['pattern']">
+        Имя должно быть на русском
+      </div>
+    </div>
+
+    <!-- ТЕЛЕФОН -->
+    <div class="field">
+      <input
+        type="tel"
+        formControlName="phone"
+        [showMaskTyped]="true"
+        mask="+0(000)000-00-00"
+        placeholder="Номер телефона"
+      />
+
+      <div
+        class="error"
+        *ngIf="form.get('phone')?.touched && form.get('phone')?.errors?.['required']"
+      >
+        Телефон обязателен
+      </div>
+
+      <div
+        class="error"
+        *ngIf="form.get('phone')?.touched && form.get('phone')?.errors?.['russianPhone']"
+      >
+        Введите российский номер (+7 (XXX) XXX-XX-XX)
+      </div>
+    </div>
+
+    <!-- УСЛУГА -->
+    <div class="field">
+      <select formControlName="service">
+        <option value="" disabled>Выберите услугу</option>
+        <option value="consultation">Консультация</option>
+        <option value="cleaning">Чистка</option>
+        <option value="treatment">Лечение</option>
+        <option value="implant">Имплантация</option>
+      </select>
+
+      <div
+        class="error"
+        *ngIf="form.get('service')?.touched && form.get('service')?.errors?.['required']"
+      >
+        Выберите услугу
+      </div>
+    </div>
+
+    <!-- КНОПКА -->
+    <button type="submit">Записаться</button>
+  </form>
+</div>
