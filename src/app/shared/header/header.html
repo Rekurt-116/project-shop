@@ -1,24 +1,40 @@
 <header class="header" [class.scrolled]="isScrolled">
   <nav class="navigation">
-    <button class="nav-button" routerLink="">
-      <img src="/assets/icons/earth.svg" style="width: 48px;" alt="">
+
+    <!-- ЛОГО -->
+    <button class="nav-button logo" routerLink="">
+      <img src="/assets/icons/earth.svg" style="width: 48px;" alt="земля в элюменатре" />
       <span>ONLINE STORE</span>
     </button>
-    <button class="nav-button" routerLink="/login" *ngIf="(userService.user$ | async) === null">Войти</button>
-    <button class="nav-button" (click)="logOut()" *ngIf="(userService.user$ | async) != null">Выйти</button>
+
+    <!-- БУРГЕР -->
+    <button class="burger" (click)="menuOpen = !menuOpen">
+      <img src="/assets/icons/menu.svg" alt="">
+    </button>
+
+    <!-- МЕНЮ -->
+    <div class="menu" [class.open]="menuOpen" [class.scrolled]="isScrolled">
+      <button class="nav-button" routerLink="/login" *ngIf="(userService.user$ | async) === null">Войти</button>
+      <button class="nav-button" (click)="logOut()" *ngIf="(userService.user$ | async) != null">Выйти</button>
+
+      <button class="nav-button" routerLink="/orders">Заказы</button>
+      <button class="nav-button" routerLink="/admin" *ngIf="(userService.user$ | async) != null">Admin</button>
+    </div>
+
   </nav>
+
+  <!-- ПОИСК + КОРЗИНА -->
   <div class="search-cart" [class.scrolled]="isScrolled">
-    <button class="nav-button-w" routerLink="/orders">Заказы</button>
-    <button class="nav-button-w" routerLink="/admin" *ngIf="(userService.user$ | async) != null">Admin</button>
     <div class="search">
       <input type="search" class="input-search" placeholder="Поиск товаров" />
       <button class="button-search">
-        <img src="/assets/icons/search.svg" alt="" />
+        <img src="/assets/icons/search.svg" />
       </button>
     </div>
+
     <button class="cart" routerLink="/cart">
-      <span style="color: #ffffff">Корзина</span>
-      <img class="cart-icon" src="/assets/icons/cart.svg" alt="" />
+      <span>Корзина</span>
+      <img class="cart-icon" src="/assets/icons/cart.svg" />
     </button>
   </div>
 </header>

@@ -18,6 +18,8 @@ export class Header {
   
   user$ = this.userService.user$;
 
+  menuOpen = false;
+
   readonly dialog: MatDialog = inject(MatDialog);
 
   openLoginDialog(): void {

@@ -2,10 +2,8 @@
   display: flex;
   width: 100%;
   height: 120px;
-  background-color: #ffffff;
   position: sticky;
   top: 0;
-  width: 100%;
   background: rgba(255, 255, 255, 0.6);
   transition: backdrop-filter 0.3s ease, background 0.3s ease;
   z-index: 1000;
@@ -47,16 +45,7 @@
   cursor: pointer;
 
   &-w {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    font-size: 18px;
-    font-weight: 500;
     color: #ffffff;
-    background: none;
-    border: none;
-    cursor: pointer;
   }
 }
 
@@ -68,6 +57,7 @@
   justify-content: flex-end;
   gap: 20px;
   border-radius: 0 0 0 20px;
+
   &.scrolled {
     opacity: 0.8;
   }
@@ -93,7 +83,6 @@
 
 .search {
   display: flex;
-  width: auto;
   height: 40px;
   align-items: center;
   margin: auto 10px auto 0;
@@ -116,10 +105,110 @@
   width: 36px;
   height: 36px;
   background-color: #000000;
-  color: #ffffff;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+/* ===== BURGER (DEFAULT HIDDEN) ===== */
+.burger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+}
+
+/* ===== MOBILE MENU DEFAULT OFF ===== */
+.menu {
+  display: none;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .navigation {
+    gap: 20px;
+  }
+
+  .input-search {
+    width: 300px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .header {
+    height: auto;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .navigation {
+    width: 100%;
+    padding: 0 16px;
+    justify-content: space-between;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 114px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    display: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .search-cart {
+    width: 100%;
+    border-radius: 0;
+    justify-content: center;
+    padding: 8px 12px;
+    gap: 10px;
+  }
+
+  .input-search {
+    width: 100%;
+  }
+
+  .cart {
+    width: auto;
+    padding: 0 12px;
+  }
+
+  .cart span {
+    display: none;
+  }
+}
+
+/* ===== SMALL PHONES ===== */
+@media (max-width: 480px) {
+
+  .name-shop {
+    font-size: 22px;
+  }
+
+  .input-search {
+    font-size: 14px;
+  }
+
+  .nav-button {
+    font-size: 16px;
+  }
 }
