@@ -1,0 +1,100 @@
+.order-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.order-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 48px;
+  border: 1px solid #000;
+  position: relative;
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-bottom: 40px;
+  }
+
+  .field {
+    margin-bottom: 24px;
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px 0;
+      border: none;
+      border-bottom: 1px solid #000;
+      font-size: 15px;
+      background: transparent;
+      outline: none;
+
+      &:focus {
+        border-bottom-width: 2px;
+      }
+    }
+  }
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 16px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    span {
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      transform: translateX(-100%);
+      transition: 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: #000;
+      background-color: #fff;
+      border: 1px solid #000;
+
+      span {
+        transform: translateX(0);
+      }
+    }
+    disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  .input-error {
+  border: 2px solid #e53935;
+}
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-bottom: 2px solid red;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+  margin-top: 4px;
+}

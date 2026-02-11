@@ -8,6 +8,7 @@
     <button class="nav-button" (click)="logOut()" *ngIf="(userService.user$ | async) != null">Выйти</button>
   </nav>
   <div class="search-cart" [class.scrolled]="isScrolled">
+    <button class="nav-button-w" routerLink="/orders">Заказы</button>
     <button class="nav-button-w" routerLink="/admin" *ngIf="(userService.user$ | async) != null">Admin</button>
     <div class="search">
       <input type="search" class="input-search" placeholder="Поиск товаров" />
